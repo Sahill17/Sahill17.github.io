@@ -1,0 +1,293 @@
+:root {
+    --bg: #020617;
+    --text: #dee4eb;
+    --posttxt: #cbd2d9;
+    --gray: #1E293B;
+}
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: var(--bg);
+    color: var(--posttxt);
+    font-family: 'Roboto',sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.container{
+    max-width: 1366px;
+    padding: 20px;
+    margin: auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* .list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} */
+
+.pagination{
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    margin-top: 80px;
+    margin-bottom: 30px;
+}
+
+.page-item{
+    border: 1px solid var(--gray);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.page-item.active{
+    background-color: var(--text);
+}
+
+.page-item.active a{
+    color: var(--bg);
+}
+
+.page-item.disabled{
+    background-color: var(--gray);
+    cursor: not-allowed;
+}
+
+.listPost{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 50px;
+}
+
+.listPostImage{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.listPostTexts{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.listPostTexts a {
+    color: var(--posttxt);
+}
+
+.listPostDetail{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: smaller;
+}
+
+.listPostTags{
+    display: flex;
+    gap: 10px;
+}
+
+.listPostTag{
+    padding: 5px;
+    border-radius: 5px;
+    background-color: var(--gray);
+}
+
+.topImage{
+    flex: 1;
+    max-height: 350px;
+    object-fit: cover;
+}
+
+.top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.topTexts{
+    flex: 1;
+    flex-direction: column;
+    gap: 20px;
+    width: 50%;
+}
+
+.topTexts a {
+    color: var(--posttxt);
+}
+
+.topTextTitle{
+    font-size: 48px;
+}
+
+.topTextDetail{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.topTextDesc{
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.topTextTag{
+    padding: 5px;
+    border-radius: 5px;
+    background-color: var(--gray);
+    color: var(--text);
+    font-size: 14px;
+}
+
+.tags-container{
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.tagbox{
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: var(--gray);
+    color: var(--text);
+    font-size: 14px;
+    text-decoration: none;
+    margin: 5px;
+}
+
+.bottom{
+    margin-top: 50px;
+}
+
+.content {
+    font-size: 20px;
+    line-height: 1.6;
+    padding: 10px;
+    width: 100%;
+    margin: 0;
+}
+
+.content p,
+.content h1,
+.content h2,
+.content h3{
+    margin: 10px 0px;
+}
+
+.content a {
+    color: var(--text);
+}
+
+.content img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.content pre{
+    width: 100%;
+    overflow: scroll;
+    padding: 20px;
+}
+
+@media (max-width:1536px){
+    .container{
+        max-width: 1366px;
+    }
+}
+
+@media (max-width: 1366px) {
+    .container{
+        max-width: 1280px;
+    }
+}
+
+@media (max-width: 1280px) {
+    .container{
+        max-width: 1024px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .container{
+        max-width: 768px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .content{
+        font-size: 18px;
+        padding: 5px;
+    }
+
+    .top{
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .topImage{
+        width: 100%;
+        max-height: 250px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .topTexts{
+        width: 90%;
+        padding: 15px;
+        text-align: center;
+    }
+
+    .topTextTitle{
+        font-size: 32px;
+    }
+
+    .topTextDesc{
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container{
+        max-width: 640px;
+    }
+
+    .topImage{
+        display: none;
+    }
+
+    .listPostImage{
+        display: none;
+    }
+}
+
+@media (max-width: 640px) {
+    .container{
+        max-width: 475px;
+    }
+}
