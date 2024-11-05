@@ -1,0 +1,36 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #020617;
+    color: #dee4eb;
+} 
+
+.nf {
+    text-align: center;
+}
+
+
+.nf h1 {
+    font-size: 8rem;
+    margin: 0;
+}
+
+
+.nf a {
+    font-size: 1.2rem;
+    text-decoration: none;
+    border: 2px solid var(--text);
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+    color: var(--text);
+}
+
+.nf a:hover{
+    background-color: #dee4eb;
+    color: #020617;
+}
+
