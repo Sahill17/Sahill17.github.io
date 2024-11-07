@@ -7,5 +7,3 @@ image = ""
 largeImage = ""
 tags = []
 +++
-
-## Hello, I'm Sahil. An engineer from India.
