@@ -23,3 +23,19 @@ pagination.pagerSize = 5
   name = "About"
   url = "/about/"
   weight = 3
+
+[markup]
+  [markup.highlight]
+    anchorLineNos = false
+    codeFences = true
+    guessSyntax = true
+    hl_Lines = ''
+    lineAnchors = ''
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = false
+    noHl = false
+    style = 'nord'
+    tabWidth = 4
+
