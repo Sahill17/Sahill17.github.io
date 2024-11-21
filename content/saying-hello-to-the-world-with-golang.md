@@ -76,7 +76,7 @@ Package: a package is a way to group functions, and it's made up of all the file
 
 fmt package: This package is one of the [standard library packages you got](https://pkg.go.dev/std) when you installed Go. which contains functions for formatting text, including printing to the console.
 
-main function: A main function to print a message to the console. A nmain function executes by default when you run the main package.
+main function: A main function to print a message to the console. A main function executes by default when you run the main package.
 
 * Run the code to say Hello to the world
 

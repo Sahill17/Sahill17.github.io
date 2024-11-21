@@ -1,17 +1,15 @@
 .chroma { color: #DDDDDD; background-color: #1E293B; border-radius: 50%;}
 .chroma .err { color: #DDDDDD; background-color: #1E293B; border-radius: 50%;}
 
-/* Base styles for code blocks */
 pre.chroma {
-    background-color: #2E3440; /* Nord dark background */
-    color: #D8DEE9; /* Nord foreground */
+    background-color: #2E3440; 
+    color: #D8DEE9;
     padding: 10px;
     border-radius: 4px;
 }
 
-/* Language token styles */
-.chroma .kd { color: #81A1C1; } /* Keywords */
-.chroma .s { color: #A3BE8C; }  /* Strings */
-.chroma .c { color: #616E88; font-style: italic; } /* Comments */
-.chroma .nf { color: #88C0D0; } /* Function names */
-.chroma .nb { color: #EBCB8B; } /* Built-ins */
+.chroma .kd { color: #81A1C1; } 
+.chroma .s { color: #A3BE8C; }  
+.chroma .c { color: #616E88; font-style: italic; } 
+.chroma .nf { color: #88C0D0; } 
+.chroma .nb { color: #EBCB8B; } 
