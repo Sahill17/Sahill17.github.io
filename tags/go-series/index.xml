@@ -17,7 +17,7 @@
 &lt;/li>
 &lt;/ul>
 &lt;h2 id="install-go">Install Go&lt;/h2>
-&lt;p>Use the &lt;a href="https://go.dev/doc/install">Download and Install&lt;/a> steps.&lt;/p>
+&lt;p>Use the &lt;a href="https://go.dev/doc/install" target="_blank" >Download and Install&lt;/a> steps.&lt;/p>
 &lt;p>Verify that you&amp;rsquo;ve installed Go by opening a command prompt and typing the following command:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">go version
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Confirm that the command prints the installed version of Go. For me, it&amp;rsquo;s &lt;code>go1.22.1&lt;/code>&lt;/p></description></item><item><title>Why Learn Go(Golang)?</title><link>https://Sahill17.github.io/why-learn-go/</link><pubDate>Thu, 14 Nov 2024 18:21:16 +0530</pubDate><guid>https://Sahill17.github.io/why-learn-go/</guid><description>&lt;h2 id="what-is-golang">What is Golang?&lt;/h2>
