@@ -1,4 +1,17 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Golang on Operations Guy</title><link>https://Sahill17.github.io/tags/golang/</link><description>Recent content in Golang on Operations Guy</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Thu, 14 Nov 2024 19:51:57 +0530</lastBuildDate><atom:link href="https://Sahill17.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml"/><item><title>Saying Hello to the World With Golang</title><link>https://Sahill17.github.io/saying-hello-to-the-world-with-golang/</link><pubDate>Thu, 14 Nov 2024 19:51:57 +0530</pubDate><guid>https://Sahill17.github.io/saying-hello-to-the-world-with-golang/</guid><description>&lt;p>In this blog, we will&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Golang on Sahil Rathod</title><link>https://Sahill17.github.io/tags/golang/</link><description>Recent content in Golang on Sahil Rathod</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Tue, 03 Dec 2024 17:38:01 +0530</lastBuildDate><atom:link href="https://Sahill17.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml"/><item><title>Variables in Golang</title><link>https://Sahill17.github.io/variables-in-golang/</link><pubDate>Tue, 03 Dec 2024 17:38:01 +0530</pubDate><guid>https://Sahill17.github.io/variables-in-golang/</guid><description>&lt;p>As we have already said hello to the world, now we can start with our basic learning. In this blog, we will understand variables and many other things related to variables in Golang.&lt;/p>
+&lt;p>I know we are all programmers and we already know what variables are, but still, we are learning from zero. Let&amp;rsquo;s just discuss some things about variables in Golang.&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>bool&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>string&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>int int8 int16 int32 int64&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>uint uint8 uint16 uint32 uint64&lt;/p></description></item><item><title>Saying Hello to the World With Golang</title><link>https://Sahill17.github.io/saying-hello-to-the-world-with-golang/</link><pubDate>Thu, 14 Nov 2024 19:51:57 +0530</pubDate><guid>https://Sahill17.github.io/saying-hello-to-the-world-with-golang/</guid><description>&lt;p>In this blog, we will&lt;/p>
 &lt;ul>
 &lt;li>
 &lt;p>Install Go (if you haven&amp;rsquo;t already)&lt;/p>
