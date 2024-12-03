@@ -1,7 +1,15 @@
 <link rel="stylesheet" href="/styles/navbar.css">
 <nav class="navbar">
     <div class="logo">
-        <a href="/">Operations Guy</a>
+        {{ if eq .RelPermalink "/about/" }}
+            <a href="/">Sahil Rathod</a>  
+        {{ else if eq .RelPermalink "/tags/" }}
+            <a href="/">Tags</a>  
+        {{ else if eq .RelPermalink "/" }}
+            <a href="/">Blog Posts</a>  
+        {{ else }}
+            <a href="/">Blog Post</a>  
+        {{ end }}
     </div>
     <div class="links">
         <a href="/">Home</a>
