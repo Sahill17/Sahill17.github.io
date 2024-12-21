@@ -10,7 +10,9 @@ tags = ["go-series","golang"]
 
 As we have already said hello to the world, now we can start with our basic learning. In this blog, we will understand variables and many other things related to variables in Golang.
 
+
 I know we are all programmers and we already know what variables are, but still, we are learning from zero. Let's just discuss some things about variables in Golang.
+
 
 * bool
 

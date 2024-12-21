@@ -2,13 +2,13 @@
 <nav class="navbar">
     <div class="logo">
         {{ if eq .RelPermalink "/about/" }}
-            <a href="/">Sahil Rathod</a>  
+            <a class="path" href="/about">~/about</a>  
         {{ else if eq .RelPermalink "/tags/" }}
-            <a href="/">Tags</a>  
+            <a  class="path" href="/tags">~/tags</a>  
         {{ else if eq .RelPermalink "/" }}
-            <a href="/">Blog Posts</a>  
+            <a class="path" href="/">~/</a>  
         {{ else }}
-            <a href="/">Blog Post</a>  
+            <a  class="path" href="{{ .Slug }}">~/{{.Title}}</a>
         {{ end }}
     </div>
     <div class="links">

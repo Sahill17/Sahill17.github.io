@@ -7,7 +7,7 @@
   }
   
   .chroma .lntd pre {
-      border: 0px solid #DDDDDD;
+      border: 0px solid #F5F5F5;
   }
   
   .chroma .lntd:first-child {
@@ -48,9 +48,9 @@
     line-height: 14px;
     letter-spacing: 0.5px;
     width: 65px;
-    color: white;
-    background-color: #1E293B;
-    border: 1.25px solid #1E293B;
+    color: #F5F5F5;
+    background-color: #000000;
+    border: 1.25px solid #000000;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
     border-bottom-right-radius: 0px;
@@ -66,9 +66,12 @@
   .copy-code-button:focus,
   .copy-code-button:active,
   .copy-code-button:active:hover {
-    color: #1E293B;
-    background-color: #DDDDDD;
-    opacity: 0.8;
+    text-decoration: none;
+    border-bottom: 4px solid #DE1C8C;
+    background-color: #262626;
+    padding: 5px;
+    border-radius: 4px;
+    text-decoration-thickness: 4px;
   }
   
   .copyable-text-area {
@@ -85,8 +88,8 @@
     content: attr(data-lang);
     font-size: 13px;
     font-weight: 700;
-    color: #DDDDDD;
-    background-color: #1E293B;
+    color: #F5F5F5;
+    background-color: #262626;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
     border-bottom-left-radius: 0;
@@ -96,6 +99,6 @@
     opacity: 0.6;
     position: absolute;
     letter-spacing: 0.5px;
-    border: 1.25px solid #1E293B;
+    border: 1.25px solid #262626;
     margin: 0 0 0 1px;
   }  

@@ -1,11 +1,12 @@
 :root {
-    --bg: #020617;
-    --text: #dee4eb;
-    --posttxt: #cbd2d9;
-    --gray: #1E293B;
+    --bg: #000000;
+    --text: #F5F5F5;
+    --posttxt: #D4D4D4;
+    --gray: #262626;
+    --pink: #DE1C8C;
 }
 
-*{
+* {
     margin: 0;
     box-sizing: border-box;
 }
@@ -22,12 +23,17 @@ a {
 }
 
 a:hover {
-    text-decoration: underline;
+    text-decoration: none;
+    border-bottom: 4px solid var(--pink);
+    background-color: var(--gray);
+    padding: 5px;
+    border-radius: 4px;
+    text-decoration-thickness: 4px;
 }
 
 .container{
     max-width: 1366px;
-    padding: 70px;
+    padding: 10px 150px;
     margin: auto;
     min-height: 100vh;
     display: flex;
@@ -35,11 +41,7 @@ a:hover {
     justify-content: space-between;
 }
 
-/* .list{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-} */
+/* Pagination tool related style */
 
 .pagination{
     display: flex;
@@ -53,7 +55,6 @@ a:hover {
 }
 
 .page-item{
-    border: 1px solid var(--gray);
     width: 30px;
     height: 30px;
     display: flex;
@@ -63,17 +64,19 @@ a:hover {
 }
 
 .page-item.active{
-    background-color: var(--text);
+    background-color: var(--gray);    
 }
 
 .page-item.active a{
-    color: var(--bg);
+    background-color: var(--gray);
 }
 
 .page-item.disabled{
     background-color: var(--gray);
     cursor: not-allowed;
 }
+
+/* Post and content related style */
 
 .listPost{
     display: flex;
@@ -114,7 +117,6 @@ a:hover {
 .listPostTag{
     padding: 5px;
     border-radius: 5px;
-    background-color: var(--gray);
 }
 
 .topImage{
@@ -158,8 +160,6 @@ a:hover {
 .topTextTag{
     padding: 5px;
     border-radius: 5px;
-    background-color: var(--gray);
-    color: var(--text);
     font-size: 14px;
 }
 
@@ -170,11 +170,7 @@ a:hover {
 }
 
 .tagbox{
-    display: inline-block;
     padding: 5px 10px;
-    border-radius: 5px;
-    background-color: var(--gray);
-    color: var(--text);
     font-size: 14px;
     text-decoration: none;
     margin: 5px;
@@ -214,6 +210,8 @@ a:hover {
     padding: 20px;
     z-index: 1;
 }
+
+/* Some responsiveness */
 
 @media (max-width:1536px){
     .container{
