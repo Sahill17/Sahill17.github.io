@@ -1,0 +1,86 @@
+<!doctype html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Welcome to OG blog"><link rel=icon href=/images/favicon.webp type=image/webp><link rel=stylesheet href=/styles/base.css><link rel=stylesheet href=/css/syntax.css><link href=/css/syntax.min.css rel=stylesheet><link href=/css/copy-code-button.min.css rel=stylesheet><link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,900;1,100;1,300;1,400;1,500;1,900&display=swap" rel=stylesheet><title>Functions and Loops in Golang</title></head><body><div class=container><link rel=stylesheet href=/styles/navbar.css><nav class=navbar><div class=logo><a class=path href>~/Functions and Loops in Golang</a></div><div class=links><a href=/>Home</a>
+<a href=/tags>Tags</a>
+<a href=/about>About</a></div></nav><div class=single><div class=top><div class=topTexts><h1 class=topTextTitle>Functions and Loops in Golang</h1><p class=topTextDesc></p><div class=topTextDetail><time>Dec 22, 2024</time></div><div class=topTextTags><a class=topTextTag href=https://Sahill17.github.io/tags/go-series/>go-series</a>
+<a class=topTextTag href=https://Sahill17.github.io/tags/golang/>golang</a></div></div><img src=/images/go.webp alt="Functions and Loops in Golang" class=topImage loading=lazy></div><div class=bottom><div class=content><p>We have already seen <code>functions</code> and used them, but let&rsquo;s just get a refresher of them quickly.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kn>package</span> <span class=nx>main</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=s>&#34;fmt&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>func</span> <span class=nf>add</span><span class=p>(</span><span class=nx>x</span><span class=p>,</span> <span class=nx>y</span> <span class=kt>int</span><span class=p>)</span> <span class=p>(</span><span class=kt>int</span><span class=p>,</span> <span class=kt>int</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=nx>x</span> <span class=o>+</span> <span class=nx>y</span><span class=p>,</span> <span class=nx>x</span> <span class=o>-</span> <span class=nx>y</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nf>add</span><span class=p>(</span><span class=mi>2</span><span class=p>,</span> <span class=mi>2</span><span class=p>))</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><ul><li><p>a function can take one or more arguments. Here, <code>add()</code> takes two parameters of type int.</p></li><li><p>Also, as you can see, both parameters share the same type. Hence, we have omitted the first parameter <code>a</code>&rsquo;s type and kept the last one.</p></li><li><p>A function can return any number of results. as <code>add()</code> function returns two results with type <code>(int, int)</code></p></li></ul><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>▶ go run ./functions.go
+</span></span><span class=line><span class=cl><span class=m>4</span> <span class=m>0</span>
+</span></span></code></pre></div><h3 id=named-return-values>Named return values</h3><p>Go&rsquo;s return values may be named. If so, they are treated as variables defined at the top of the function.</p><p>A <code>return</code> statement without arguments returns the named return values. This is known as a &ldquo;naked&rdquo; return.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kn>package</span> <span class=nx>main</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=s>&#34;fmt&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>func</span> <span class=nf>get</span><span class=p>()</span> <span class=p>(</span><span class=nx>x</span><span class=p>,</span> <span class=nx>y</span> <span class=kt>int</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>x</span> <span class=p>=</span> <span class=mi>2</span>
+</span></span><span class=line><span class=cl>    <span class=nx>y</span> <span class=p>=</span> <span class=mi>2</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>func</span> <span class=nf>main</span><span class=p>(){</span>
+</span></span><span class=line><span class=cl>    <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nf>get</span><span class=p>())</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><p>which automatically returns x and y.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>▶ go run ./naked.go    
+</span></span><span class=line><span class=cl><span class=m>2</span> <span class=m>2</span>
+</span></span></code></pre></div><h3 id=for>For</h3><p>Go has only one looping construct, the <code>for</code> loop. The basic <code>for</code> loop has three components separated by semicolons:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>for INITIAL; CONDITION; AFTER {
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>... ... ...
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>}
+</span></span></code></pre></div><p>The <code>init</code> statement executes before the first iteration. <code>condition</code> statement executes before every iteration. And <code>post/after</code> statement executes at the end of every iteration.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kn>package</span> <span class=nx>main</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=s>&#34;fmt&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>sum</span> <span class=o>:=</span> <span class=mi>0</span>
+</span></span><span class=line><span class=cl>    <span class=k>for</span> <span class=nx>i</span> <span class=o>:=</span> <span class=mi>0</span><span class=p>;</span> <span class=nx>i</span> <span class=p>&lt;</span> <span class=mi>5</span><span class=p>;</span> <span class=nx>i</span><span class=o>++</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>sum</span> <span class=o>+=</span> <span class=nx>i</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>sum</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><p>The <code>init</code> and <code>post</code> statements are optional.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kn>package</span> <span class=nx>main</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=s>&#34;fmt&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>sum</span> <span class=o>:=</span> <span class=mi>1</span>
+</span></span><span class=line><span class=cl>    <span class=k>for</span> <span class=p>;</span> <span class=nx>sum</span> <span class=p>&lt;</span> <span class=mi>10</span><span class=p>;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>sum</span> <span class=o>+=</span> <span class=nx>sum</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>sum</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><h3 id=for-is-gos-while-loop>For is go&rsquo;s while loop</h3><p>You can just drop the semicolons.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kn>package</span> <span class=nx>main</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=s>&#34;fmt&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>sum</span> <span class=o>:=</span> <span class=mi>1</span>
+</span></span><span class=line><span class=cl>    <span class=k>for</span> <span class=nx>sum</span> <span class=p>&lt;</span> <span class=mi>10</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>sum</span> <span class=o>+=</span> <span class=nx>sum</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>sum</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><h3 id=if-else>if-else</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kn>package</span> <span class=nx>main</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=s>&#34;fmt&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>num</span> <span class=o>:=</span> <span class=mi>10</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=nx>num</span><span class=o>%</span><span class=mi>2</span> <span class=o>==</span> <span class=mi>0</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;The number is even.&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;The number is odd.&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><p>Variables declared by the statement are only in scope until the end of the <code>if</code>. and <code>else</code> block.</p><p>Let&rsquo;s wrap it up here, In the next blog, we will be looking at switch cases and defer statements.</p><h3 id=see-you-soon>See you soon!</h3><p>Thanks for joining our journey to learn Go (Golang)! In our next blog, we’ll dive deeper into Go programming essentials. Stay tuned for more exciting learning adventures!</p></div></div></div><link rel=stylesheet href=/styles/footer.css><div class=footer><div class=footerlinks><a href=/tags>Tags</a> |
+<a href=/sitemap.xml>Sitemap</a></div><div class=social><a href=https://in.linkedin.com/in/sahilrathod017><img src=/svg/linkedin.svg alt=LinkedIn>
+</a><a href=https://github.com/Sahill17><img src=/svg/github.svg alt=GitHub>
+</a><a href=https://x.com/@iamSahil1705><img src=/svg/twitter.svg alt=X></a></div></div></div></body><script src=/js/copy-code-button.min.js></script></html>
