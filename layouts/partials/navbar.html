@@ -11,9 +11,17 @@
             <a  class="path" href="{{ .Slug }}">~/{{.Title}}</a>
         {{ end }}
     </div>
-    <div class="links">
+    <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="links" id="navbarLinks">
         <a href="/">Home</a>
         <a href="/tags">Tags</a>
         <a href="/about">About</a>
+        <div class="close-button" id="closeButton">✖</div>
     </div>
 </nav>
+{{ $js := resources.Get "js/toggle.js" | resources.Minify | resources.Fingerprint }}
+<script src="{{ $js.Permalink }}"></script>

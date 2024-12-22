@@ -67,6 +67,7 @@
   .copy-code-button:active,
   .copy-code-button:active:hover {
     text-decoration: none;
+    color: #F5F5F5;
     border-bottom: 4px solid #DE1C8C;
     background-color: #262626;
     padding: 5px;

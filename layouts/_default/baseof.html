@@ -6,11 +6,11 @@
     <meta name="description" content="{{ or .Params.descroption .Site.Params.description}}">
     <link rel="icon" href="/images/favicon.webp" type="image/webp">
     <link rel="stylesheet" href="/styles/base.css">
-    <link rel="stylesheet" href="/css/syntax.css">
+    <link rel="stylesheet" href="/styles/syntax.css">
     {{ if (findRE "<pre" .Content 1) }}
-    {{ $syntax := resources.Get "css/syntax.css" | minify }}
-    <link href="{{ $syntax.RelPermalink }}" rel="stylesheet">
-
+        <link rel="stylesheet" href="/styles/syntax.css">
+    {{/*  {{ $syntax := resources.Get "styles/syntax.css" | minify }}
+    <link href="{{ $syntax.RelPermalink }}" rel="stylesheet">  */}}
     {{ $copyCss := resources.Get "css/copy-code-button.css" | minify }}
     <link href="{{ $copyCss.RelPermalink }}" rel="stylesheet">
     {{ end }}
