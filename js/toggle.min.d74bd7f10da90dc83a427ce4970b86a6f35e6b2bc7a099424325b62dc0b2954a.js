@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",()=>{const t=document.querySelector(".hamburger"),e=document.getElementById("navbarLinks"),n=document.getElementById("closeButton");t&&e&&n&&(t.addEventListener("click",()=>{e.classList.add("show")}),n.addEventListener("click",()=>{e.classList.remove("show")}))})

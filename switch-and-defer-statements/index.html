@@ -1,0 +1,137 @@
+<!doctype html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Welcome to OG blog"><link rel=icon href=/images/favicon.webp type=image/webp><link rel=stylesheet href=/styles/base.css><link rel=stylesheet href=/styles/syntax.css><link rel=stylesheet href=/styles/syntax.css><link href=/css/copy-code-button.min.css rel=stylesheet><link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,900;1,100;1,300;1,400;1,500;1,900&display=swap" rel=stylesheet><title>Switch and Defer Statements</title></head><body><div class=container><link rel=stylesheet href=/styles/navbar.css><nav class=navbar><div class=logo><a class=path href>~/Switch and Defer Statements</a></div><div class=hamburger><span></span>
+<span></span>
+<span></span></div><div class=links id=navbarLinks><a href=/>Home</a>
+<a href=/tags>Tags</a>
+<a href=/about>About</a><div class=close-button id=closeButton>✖</div></div></nav><script src=https://Sahill17.github.io/js/toggle.min.d74bd7f10da90dc83a427ce4970b86a6f35e6b2bc7a099424325b62dc0b2954a.js></script><div class=single><div class=top><div class=topTexts><h1 class=topTextTitle>Switch and Defer Statements</h1><p class=topTextDesc></p><div class=topTextDetail><time>Dec 22, 2024</time></div><div class=topTextTags><a class=topTextTag href=https://Sahill17.github.io/tags/go-series/>go-series</a>
+<a class=topTextTag href=https://Sahill17.github.io/tags/golang/>golang</a></div></div><img src=/images/go.webp alt="Switch and Defer Statements" class=topImage loading=lazy></div><div class=bottom><div class=content><p>In our previous learning, we have discussed functions and loops. Here we will be talking about <code>switch</code> and <code>defer</code> statements. Let&rsquo;s start with switch cases..</p><p>Switch statements are a way to compare multiple options and values together. They are similar to if-else statements but are more concise and readable</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kn>package</span> <span class=nx>main</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=s>&#34;fmt&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=kd>var</span> <span class=nx>color</span> <span class=kt>string</span>
+</span></span><span class=line><span class=cl>    <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;What color is the sky??&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=k>switch</span> <span class=nx>fmt</span><span class=p>.</span><span class=nf>Scan</span><span class=p>(</span><span class=o>&amp;</span><span class=nx>color</span><span class=p>);</span> <span class=nx>color</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>case</span> <span class=s>&#34;red&#34;</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;Evening&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=k>case</span> <span class=s>&#34;blue&#34;</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;Day&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=k>case</span> <span class=s>&#34;pink&#34;</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;Evening&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=k>case</span> <span class=s>&#34;black&#34;</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;Night&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=k>default</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;Sky is what???&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><p>Did you notice that the Go <code>break</code> statement is not required at the end of a <code>case</code>. <code>break</code> statement is implicit in Go.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>▶ go run switch.go
+</span></span><span class=line><span class=cl>What color is the sky??
+</span></span><span class=line><span class=cl>red
+</span></span><span class=line><span class=cl>Evening
+</span></span></code></pre></div><p>If you <em>do</em> want a <code>case</code> to fall through to the next <code>case</code>, you can use the <code>fallthrough</code> keyword.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kn>package</span> <span class=nx>main</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=s>&#34;fmt&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=kd>var</span> <span class=nx>color</span> <span class=kt>string</span>
+</span></span><span class=line><span class=cl>    <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;What color is the sky??&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=k>switch</span> <span class=nx>fmt</span><span class=p>.</span><span class=nf>Scan</span><span class=p>(</span><span class=o>&amp;</span><span class=nx>color</span><span class=p>);</span> <span class=nx>color</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>case</span> <span class=s>&#34;blue&#34;</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;Day&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=k>case</span> <span class=s>&#34;red&#34;</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=k>fallthrough</span>
+</span></span><span class=line><span class=cl>    <span class=k>case</span> <span class=s>&#34;pink&#34;</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;Evening&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=k>case</span> <span class=s>&#34;black&#34;</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;Night&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=k>default</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;Sky is what???&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>▶ go run switch.go
+</span></span><span class=line><span class=cl>What color is the sky??
+</span></span><span class=line><span class=cl>red
+</span></span><span class=line><span class=cl>Evening
+</span></span></code></pre></div><p><code>default</code> is the case that runs if none of the other cases match.</p><p><code>switch</code> with no condition is same as <code>switch true</code></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kn>package</span> <span class=nx>main</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=s>&#34;fmt&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=s>&#34;time&#34;</span>
+</span></span><span class=line><span class=cl><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>t</span> <span class=o>:=</span> <span class=nx>time</span><span class=p>.</span><span class=nf>Now</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=k>switch</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>case</span> <span class=nx>t</span><span class=p>.</span><span class=nf>Hour</span><span class=p>()</span> <span class=p>&lt;</span> <span class=mi>12</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;Good morning.&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=k>case</span> <span class=nx>t</span><span class=p>.</span><span class=nf>Hour</span><span class=p>()</span> <span class=p>&lt;</span> <span class=mi>17</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;Good afternoon.&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=k>default</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;Good evening.&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>▶ go run switch.go
+</span></span><span class=line><span class=cl>Good afternoon.
+</span></span></code></pre></div><h3 id=defer-statement>Defer statement</h3><p><code>defer</code> keyword allows a function to be executed automatically <em>just before</em> its enclosing function returns. The deferred call&rsquo;s arguments are evaluated immediately, but the function call is not executed until the surrounding function returns.</p><p><code>deferred functions</code> are mostly used for clean-up tasks or for closing connections.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kn>package</span> <span class=nx>main</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=s>&#34;fmt&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=s>&#34;time&#34;</span>
+</span></span><span class=line><span class=cl><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;You need rest.&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=nx>start</span> <span class=o>:=</span> <span class=nx>time</span><span class=p>.</span><span class=nf>Now</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=k>defer</span> <span class=nf>sleeping</span><span class=p>(</span><span class=nx>start</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=nx>time</span><span class=p>.</span><span class=nf>Sleep</span><span class=p>(</span><span class=mi>5</span> <span class=o>*</span> <span class=nx>time</span><span class=p>.</span><span class=nx>Second</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;You went to sleep.&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>func</span> <span class=nf>sleeping</span><span class=p>(</span><span class=nx>sleep</span> <span class=nx>time</span><span class=p>.</span><span class=nx>Time</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;You slpet for %f seconds.&#34;</span><span class=p>,</span> <span class=nx>time</span><span class=p>.</span><span class=nf>Since</span><span class=p>(</span><span class=nx>sleep</span><span class=p>).</span><span class=nf>Seconds</span><span class=p>())</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>▶ go run defer.go
+</span></span><span class=line><span class=cl>You need rest.
+</span></span><span class=line><span class=cl>You went to sleep.
+</span></span><span class=line><span class=cl>You slpet <span class=k>for</span> 5.001066 seconds.
+</span></span></code></pre></div><h3 id=stacking-defer>Stacking defer</h3><p>Deferred function calls are pushed onto a stack. When a function returns, its deferred calls are executed in LIFO (last-in-first-out) order.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kn>package</span> <span class=nx>main</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=s>&#34;fmt&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;counting&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>for</span> <span class=nx>i</span> <span class=o>:=</span> <span class=mi>0</span><span class=p>;</span> <span class=nx>i</span> <span class=p>&lt;</span> <span class=mi>5</span><span class=p>;</span> <span class=nx>i</span><span class=o>++</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>defer</span> <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>i</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;done&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>▶ go run stackdefer.go
+</span></span><span class=line><span class=cl>counting
+</span></span><span class=line><span class=cl><span class=k>done</span>
+</span></span><span class=line><span class=cl><span class=m>4</span>
+</span></span><span class=line><span class=cl><span class=m>3</span>
+</span></span><span class=line><span class=cl><span class=m>2</span>
+</span></span><span class=line><span class=cl><span class=m>1</span>
+</span></span><span class=line><span class=cl><span class=m>0</span>
+</span></span></code></pre></div><h3 id=evaluation-of-arguments>Evaluation of arguments</h3><p>The arguments of a deferred function are evaluated when the <code>defer</code> statement is executed and not when the actual function call is done. you will understand this better with below example:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kn>package</span> <span class=nx>main</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=s>&#34;fmt&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>a</span> <span class=o>:=</span> <span class=mi>5</span>
+</span></span><span class=line><span class=cl>    <span class=k>defer</span> <span class=nf>inc</span><span class=p>(</span><span class=nx>a</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=nx>a</span><span class=o>++</span>
+</span></span><span class=line><span class=cl>    <span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;a --&gt; %v\n&#34;</span><span class=p>,</span> <span class=nx>a</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>func</span> <span class=nf>inc</span><span class=p>(</span><span class=nx>a</span> <span class=kt>int</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;a -&gt; %v&#34;</span><span class=p>,</span> <span class=nx>a</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>▶ go run defer2.go
+</span></span><span class=line><span class=cl>a --&gt; <span class=m>6</span>
+</span></span><span class=line><span class=cl>a -&gt; <span class=m>5</span>
+</span></span></code></pre></div><p><code>defer</code> statements are not restricted to only functions; you can defer a method as well.</p><p>I guess we will wrap it up here. Stay tuned for the next learnings.</p><h3 id=see-you-soon>See you soon!</h3><p>Thanks for joining our journey to learn Go (Golang)! In our next blog, we’ll dive deeper into Go programming essentials. Stay tuned for more exciting learning adventures!</p></div></div></div><link rel=stylesheet href=/styles/footer.css><div class=footer><div class=footerlinks><a href=/tags>Tags</a> |
+<a href=/sitemap.xml>Sitemap</a></div><div class=social><a href=https://in.linkedin.com/in/sahilrathod017><img src=/svg/linkedin.svg alt=LinkedIn>
+</a><a href=https://github.com/Sahill17><img src=/svg/github.svg alt=GitHub>
+</a><a href=https://x.com/@iamSahil1705><img src=/svg/twitter.svg alt=X></a></div></div></div></body><script src=/js/copy-code-button.min.js></script></html>

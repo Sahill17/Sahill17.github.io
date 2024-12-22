@@ -1,0 +1,15 @@
+.chroma { color: #DDDDDD; background-color: #1E293B; border-radius: 50%;}
+.chroma .err { color: #DDDDDD; background-color: #1E293B; border-radius: 50%;}
+
+pre.chroma {
+    background-color: #262626; 
+    color: #F5F5F5;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.chroma .kd { color: #81A1C1; } 
+.chroma .s { color: #A3BE8C; }  
+.chroma .c { color: #616E88; font-style: italic; } 
+.chroma .nf { color: #88C0D0; } 
+.chroma .nb { color: #EBCB8B; } 
