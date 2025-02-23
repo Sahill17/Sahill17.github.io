@@ -164,9 +164,12 @@ a:hover {
 }
 
 .tags-container{
-    max-width: 300px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 10px;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
 }
 
 .tagbox{
@@ -174,6 +177,7 @@ a:hover {
     font-size: 14px;
     text-decoration: none;
     margin: 5px;
+    white-space: nowrap;
 }
 
 .bottom{
@@ -288,5 +292,13 @@ a:hover {
 @media (max-width: 640px) {
     .container{
         max-width: 475px;
+    }
+}
+
+/* Some unknown css */
+@media (max-width: 768px) {
+    .tags-container {
+        justify-content: flex-start; 
+        padding: 10px;
     }
 }

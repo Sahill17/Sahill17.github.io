@@ -1,0 +1,136 @@
+<!doctype html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Welcome to OG blog"><link rel=icon href=/images/favicon.webp type=image/webp><link rel=stylesheet href=/styles/base.css><link rel=stylesheet href=/styles/syntax.css><link rel=stylesheet href=/styles/syntax.css><link href=/css/copy-code-button.min.css rel=stylesheet><link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,900;1,100;1,300;1,400;1,500;1,900&display=swap" rel=stylesheet><title>Arrays and Slices</title>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2F6CS1MDLH"></script><script>var dnt,doNotTrack=!1;if(!1&&(dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes"),!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-2F6CS1MDLH")}</script></head><body><div class=container><link rel=stylesheet href=/styles/navbar.css><nav class=navbar><div class=logo><a class=path href>~/Arrays and Slices</a></div><div class=hamburger><span></span>
+<span></span>
+<span></span></div><div class=links id=navbarLinks><a href=/>Home</a>
+<a href=/tags>Tags</a>
+<a href=/cheatsheet>CheatSheet</a><div class=close-button id=closeButton>✖</div></div></nav><script src=https://Sahill17.github.io/js/toggle.min.d74bd7f10da90dc83a427ce4970b86a6f35e6b2bc7a099424325b62dc0b2954a.js></script><div class=single><div class=top><div class=topTexts><h1 class=topTextTitle>Arrays and Slices</h1><p class=topTextDesc></p><div class=topTextDetail><time>Feb 23, 2025</time></div><div class=topTextTags><a class=topTextTag href=https://Sahill17.github.io/tags/go-series/>go-series</a>
+<a class=topTextTag href=https://Sahill17.github.io/tags/golang/>golang</a></div></div><img src=/images/go.webp alt="Arrays and Slices" class=topImage loading=lazy></div><div class=bottom><div class=content><p>In our previous learning, we have discussed switch and defer statements. Here we will be looking into <code>Arrays</code> and <code>Slices</code>.</p><p>We already know what arrays are, but let’s just quickly reexamine what their definition is.</p><p><strong>An array is a linear data structure where all the elements are arranged sequentially. Stored at contiguous memory locations.</strong></p><h3 id=is-the-array-always-of-a-fixed-size><strong>Is the array always of a fixed size?</strong></h3><p>At core, arrays are fixed size only, but most of the languages provide dynamic-sized arrays using underlined fixed arrays. For example, Java has ArrayList, and Python has lists.</p><h3 id=arrays-in-go><strong>Arrays in Go</strong></h3><p>In Go we have fixed-size arrays. Let’s define an array.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kn>package</span> <span class=nx>main</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=s>&#34;fmt&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	<span class=c1>// var myInts [10]int</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	<span class=nx>primes</span> <span class=o>:=</span> <span class=p>[</span><span class=mi>6</span><span class=p>]</span><span class=kt>int</span><span class=p>{</span><span class=mi>2</span><span class=p>,</span> <span class=mi>3</span><span class=p>,</span> <span class=mi>5</span><span class=p>,</span> <span class=mi>7</span><span class=p>,</span> <span class=mi>11</span><span class=p>,</span> <span class=mi>13</span><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>primes</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>% go run arrays.go 
+</span></span><span class=line><span class=cl><span class=o>[</span><span class=m>2</span> <span class=m>3</span> <span class=m>5</span> <span class=m>7</span> <span class=m>11</span> 13<span class=o>]</span>
+</span></span></code></pre></div><h3 id=slices><strong>Slices</strong></h3><p>Slices are like references to arrays. A slice does not store any data; it just describes a section of an underlying array. In practice, slices are much more common than arrays.</p><p>A slice is formed by specifying two indices, a low and high bound separated by a colon. From which the lower side includes the first element and the higher side excludes the last element.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kn>package</span> <span class=nx>main</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=s>&#34;fmt&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	<span class=nx>a</span> <span class=o>:=</span> <span class=p>[</span><span class=mi>5</span><span class=p>]</span><span class=kt>int</span><span class=p>{</span><span class=mi>4</span><span class=p>,</span> <span class=mi>6</span><span class=p>,</span> <span class=mi>2</span><span class=p>,</span> <span class=mi>7</span><span class=p>,</span> <span class=mi>8</span><span class=p>}</span>
+</span></span><span class=line><span class=cl>	<span class=kd>var</span> <span class=nx>slice</span> <span class=p>[]</span><span class=kt>int</span> <span class=p>=</span> <span class=nx>a</span><span class=p>[</span><span class=mi>1</span><span class=p>:</span><span class=mi>3</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>slice</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>% go run slices.go 
+</span></span><span class=line><span class=cl><span class=o>[</span><span class=m>6</span> 2<span class=o>]</span>
+</span></span></code></pre></div><p>Changing the elements of a slice modifies the corresponding elements of its underlying array.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kn>package</span> <span class=nx>main</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=s>&#34;fmt&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	<span class=nx>a</span> <span class=o>:=</span> <span class=p>[</span><span class=mi>5</span><span class=p>]</span><span class=kt>int</span><span class=p>{</span><span class=mi>1</span><span class=p>,</span> <span class=mi>2</span><span class=p>,</span> <span class=mi>3</span><span class=p>,</span> <span class=mi>4</span><span class=p>,</span> <span class=mi>5</span><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	<span class=nx>s1</span> <span class=o>:=</span> <span class=nx>a</span><span class=p>[:</span><span class=mi>3</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>	<span class=nx>s2</span> <span class=o>:=</span> <span class=nx>a</span><span class=p>[</span><span class=mi>3</span><span class=p>:]</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>s1</span><span class=p>,</span> <span class=nx>s2</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	<span class=nx>s2</span><span class=p>[</span><span class=mi>0</span><span class=p>]</span> <span class=p>=</span> <span class=mi>0</span>
+</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>s1</span><span class=p>,</span> <span class=nx>s2</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>a</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>go run slices.go
+</span></span><span class=line><span class=cl><span class=o>[</span><span class=m>1</span> <span class=m>2</span> 3<span class=o>]</span> <span class=o>[</span><span class=m>4</span> 5<span class=o>]</span>
+</span></span><span class=line><span class=cl><span class=o>[</span><span class=m>1</span> <span class=m>2</span> 3<span class=o>]</span> <span class=o>[</span><span class=m>0</span> 5<span class=o>]</span>
+</span></span><span class=line><span class=cl><span class=o>[</span><span class=m>1</span> <span class=m>2</span> <span class=m>3</span> <span class=m>0</span> 5<span class=o>]</span>
+</span></span></code></pre></div><p>A slice has both a length and a capacity. The length of a slice is the number of elements it contains. The capacity of a slice is the number of elements in the underlying array, counting from the first element in the slice.</p><p>You can extend a slice&rsquo;s length by re-slicing it, provided it has sufficient capacity.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kn>package</span> <span class=nx>main</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=s>&#34;fmt&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	<span class=nx>a</span> <span class=o>:=</span> <span class=p>[]</span><span class=kt>int</span><span class=p>{</span><span class=mi>1</span><span class=p>,</span> <span class=mi>2</span><span class=p>,</span> <span class=mi>3</span><span class=p>,</span> <span class=mi>4</span><span class=p>,</span> <span class=mi>5</span><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	<span class=nx>s1</span> <span class=o>:=</span> <span class=nx>a</span><span class=p>[:</span><span class=mi>2</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;For a len=%d cap=%d\n&#34;</span><span class=p>,</span> <span class=nb>len</span><span class=p>(</span><span class=nx>a</span><span class=p>),</span> <span class=nb>cap</span><span class=p>(</span><span class=nx>a</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;For s1 len=%d cap=%d\n&#34;</span><span class=p>,</span> <span class=nb>len</span><span class=p>(</span><span class=nx>s1</span><span class=p>),</span> <span class=nb>cap</span><span class=p>(</span><span class=nx>s1</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	<span class=nx>s1</span> <span class=p>=</span> <span class=nx>a</span><span class=p>[:</span><span class=mi>4</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;Extended len=%d cap=%d\n&#34;</span><span class=p>,</span> <span class=nb>len</span><span class=p>(</span><span class=nx>s1</span><span class=p>),</span> <span class=nb>cap</span><span class=p>(</span><span class=nx>s1</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	<span class=nx>s1</span> <span class=p>=</span> <span class=nx>a</span><span class=p>[</span><span class=mi>3</span><span class=p>:]</span>
+</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;Dropped len=%d cap=%d\n&#34;</span><span class=p>,</span> <span class=nb>len</span><span class=p>(</span><span class=nx>s1</span><span class=p>),</span> <span class=nb>cap</span><span class=p>(</span><span class=nx>s1</span><span class=p>))</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>% go run slices.go
+</span></span><span class=line><span class=cl>For a <span class=nv>len</span><span class=o>=</span><span class=m>5</span> <span class=nv>cap</span><span class=o>=</span><span class=m>5</span>
+</span></span><span class=line><span class=cl>For s1 <span class=nv>len</span><span class=o>=</span><span class=m>2</span> <span class=nv>cap</span><span class=o>=</span><span class=m>5</span>
+</span></span><span class=line><span class=cl>Extended <span class=nv>len</span><span class=o>=</span><span class=m>4</span> <span class=nv>cap</span><span class=o>=</span><span class=m>5</span>
+</span></span><span class=line><span class=cl>Dropped <span class=nv>len</span><span class=o>=</span><span class=m>2</span> <span class=nv>cap</span><span class=o>=</span><span class=m>2</span>
+</span></span></code></pre></div><h3 id=nil-slices>Nil Slices</h3><p>The zero value of a slice is <code>nil</code>. A nil slice has a length and capacity of 0 and has no underlying array.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kn>package</span> <span class=nx>main</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=s>&#34;fmt&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>var</span> <span class=nx>s</span> <span class=p>[]</span><span class=kt>int</span>
+</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>s</span><span class=p>,</span> <span class=nb>len</span><span class=p>(</span><span class=nx>s</span><span class=p>),</span> <span class=nb>cap</span><span class=p>(</span><span class=nx>s</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>	<span class=k>if</span> <span class=nx>s</span> <span class=o>==</span> <span class=kc>nil</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>		<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;nil!&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>	<span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-powershell data-lang=powershell><span class=line><span class=cl><span class=n>go</span> <span class=n>run</span> <span class=p>.\</span><span class=n>nil_slice</span><span class=p>.</span><span class=py>go</span>
+</span></span><span class=line><span class=cl><span class=p>[]</span> <span class=mf>0</span> <span class=mf>0</span>
+</span></span><span class=line><span class=cl><span class=n>nil</span><span class=p>!</span>
+</span></span></code></pre></div><h3 id=create-slices-with-make>Create slices with Make</h3><p>We can create slices with built-in <code>make</code> function. and it’s a way to create dynamically-sized arrays. When we use the make function to create a slice, it allocates the zeroed value array and returns a slice that refers to that zeroed value array.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kn>package</span> <span class=nx>main</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=s>&#34;fmt&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	<span class=nx>a</span> <span class=o>:=</span> <span class=nb>make</span><span class=p>([]</span><span class=kt>int</span><span class=p>,</span> <span class=mi>3</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;%v len=%d cap=%d \n&#34;</span><span class=p>,</span> <span class=nx>a</span><span class=p>,</span> <span class=nb>len</span><span class=p>(</span><span class=nx>a</span><span class=p>),</span> <span class=nb>cap</span><span class=p>(</span><span class=nx>a</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	<span class=c1>// We can specify capacity in third parameter</span>
+</span></span><span class=line><span class=cl>	<span class=nx>b</span> <span class=o>:=</span> <span class=nb>make</span><span class=p>([]</span><span class=kt>string</span><span class=p>,</span> <span class=mi>3</span><span class=p>,</span> <span class=mi>5</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;%v len=%d cap=%d&#34;</span><span class=p>,</span> <span class=nx>b</span><span class=p>,</span> <span class=nb>len</span><span class=p>(</span><span class=nx>b</span><span class=p>),</span> <span class=nb>cap</span><span class=p>(</span><span class=nx>b</span><span class=p>))</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-powershell data-lang=powershell><span class=line><span class=cl><span class=n>go</span> <span class=n>run</span> <span class=p>.\</span><span class=n>make_slice</span><span class=p>.</span><span class=py>go</span>
+</span></span><span class=line><span class=cl><span class=p>[</span><span class=mf>0</span> <span class=mf>0</span> <span class=mf>0</span><span class=p>]</span> <span class=n>len</span><span class=p>=</span><span class=mf>3</span> <span class=n>cap</span><span class=p>=</span><span class=mf>3</span> 
+</span></span><span class=line><span class=cl><span class=p>[</span>  <span class=p>]</span> <span class=n>len</span><span class=p>=</span><span class=mf>3</span> <span class=n>cap</span><span class=p>=</span><span class=mf>5</span>
+</span></span></code></pre></div><p>If we want to create a slice with a specific set of values, we can use a slice literal.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=nx>mySlice</span> <span class=o>:=</span> <span class=p>[]</span><span class=kt>string</span> <span class=p>{</span><span class=s>&#34;I&#34;</span><span class=p>,</span><span class=s>&#34;love&#34;</span><span class=p>,</span><span class=s>&#34;Golang&#34;</span><span class=p>}</span>
+</span></span></code></pre></div><h3 id=appending-new-elements-to-a-slice>Appending new elements to a slice</h3><p>Go also provides a built-in <code>append</code> function to append new elements to a slice. If array is too small to fit all the given values a bigger array gets allocated and slice will point to the newly allocated array.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kn>package</span> <span class=nx>main</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=p>(</span>
+</span></span><span class=line><span class=cl>	<span class=s>&#34;fmt&#34;</span>
+</span></span><span class=line><span class=cl><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>var</span> <span class=nx>a</span> <span class=p>[]</span><span class=kt>int</span>
+</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;%v \n&#34;</span><span class=p>,</span> <span class=nx>a</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	<span class=c1>// Slice grows as needed</span>
+</span></span><span class=line><span class=cl>	<span class=nx>a</span> <span class=p>=</span> <span class=nb>append</span><span class=p>(</span><span class=nx>a</span><span class=p>,</span> <span class=mi>1</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;%v \n&#34;</span><span class=p>,</span> <span class=nx>a</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	<span class=c1>// We can add multiple values</span>
+</span></span><span class=line><span class=cl>	<span class=nx>a</span> <span class=p>=</span> <span class=nb>append</span><span class=p>(</span><span class=nx>a</span><span class=p>,</span> <span class=mi>2</span><span class=p>,</span> <span class=mi>3</span><span class=p>,</span> <span class=mi>4</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;%v \n&#34;</span><span class=p>,</span> <span class=nx>a</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-powershell data-lang=powershell><span class=line><span class=cl><span class=n>go</span> <span class=n>run</span> <span class=p>.\</span><span class=n>slice_append</span><span class=p>.</span><span class=py>go</span>
+</span></span><span class=line><span class=cl><span class=p>[]</span> 
+</span></span><span class=line><span class=cl><span class=p>[</span><span class=mf>1</span><span class=p>]</span> 
+</span></span><span class=line><span class=cl><span class=p>[</span><span class=mf>1</span> <span class=mf>2</span> <span class=mf>3</span> <span class=mf>4</span><span class=p>]</span>
+</span></span></code></pre></div><p>I guess we will wrap it up here. Stay tuned for the next learnings.</p><h3 id=see-you-soon>See you soon!</h3><p>Thanks for joining our journey to learn Go (Golang)! In our next blog, we&rsquo;ll dive deeper into Go programming essentials. Stay tuned for more exciting learning adventures! Don&rsquo;t forget to subscribe to our newsletter for updates.</p></div></div></div><link rel=stylesheet href=/styles/footer.css><div class=footer><div class=footerlinks><a href=/tags>Tags</a> |
+<a href=/sitemap.xml>Sitemap</a></div><div class=social><a href=https://in.linkedin.com/in/sahilrathod017><img src=/svg/linkedin.svg alt=LinkedIn>
+</a><a href=https://github.com/Sahill17><img src=/svg/github.svg alt=GitHub>
+</a><a href=https://x.com/@iamSahil1705><img src=/svg/twitter.svg alt=X></a></div></div></div></body><script src=/js/copy-code-button.min.js></script></html>
