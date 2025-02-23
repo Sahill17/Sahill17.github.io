@@ -21,8 +21,8 @@ pagination.pagerSize = 5
   url = "/tags/"
   weight = 2
 [[menu.main]]
-  name = "About"
-  url = "/about/"
+  name = "CheatSheet"
+  url = "/cheatsheet/"
   weight = 3
 
 [markup]

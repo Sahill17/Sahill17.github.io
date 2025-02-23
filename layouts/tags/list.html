@@ -1,11 +1,11 @@
 {{ define "main" }}
 {{ if eq .RelPermalink "/tags/" }}
 <div class="tags-container">
-{{ range $.Site.Taxonomies.tags.ByCount }}
-    <a href="/tags/{{.Name}}" class="tagbox">
-        # {{ .Name }} <small>{{ .Count }}</small>
-    </a>
-{{ end }}
+    {{ range $.Site.Taxonomies.tags.ByCount }}
+        <a href="/tags/{{.Name}}" class="tagbox">
+            # {{ .Name }} <small> {{ .Count }}</small>
+        </a>
+    {{ end }}
 </div>
 {{ else }}
 <div class="list">

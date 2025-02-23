@@ -1,7 +1,7 @@
 {{ define "main" }}
 <div class="list">
     {{ range .Paginator.Pages }}
-    {{ if ne .File.BaseFileName "about" }}
+    {{ if ne .File.BaseFileName "cheatsheet" }}
         <div class="listPost">
             <img src={{.Params.image}} alt="{{ .Title }}" class="listPostImage" loading="lazy">
             <div class="listPostTexts">

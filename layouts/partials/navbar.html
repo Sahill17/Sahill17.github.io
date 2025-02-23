@@ -1,8 +1,8 @@
 <link rel="stylesheet" href="/styles/navbar.css">
 <nav class="navbar">
     <div class="logo">
-        {{ if eq .RelPermalink "/about/" }}
-            <a class="path" href="/about">~/about</a>  
+        {{ if eq .RelPermalink "/cheatsheet/" }}
+            <a class="path" href="/cheatsheet">~/cheatsheet</a>  
         {{ else if eq .RelPermalink "/tags/" }}
             <a  class="path" href="/tags">~/tags</a>  
         {{ else if eq .RelPermalink "/" }}
@@ -19,7 +19,7 @@
     <div class="links" id="navbarLinks">
         <a href="/">Home</a>
         <a href="/tags">Tags</a>
-        <a href="/about">About</a>
+        <a href="/cheatsheet">CheatSheet</a>
         <div class="close-button" id="closeButton">✖</div>
     </div>
 </nav>
