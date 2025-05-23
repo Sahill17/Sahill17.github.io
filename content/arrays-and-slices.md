@@ -248,4 +248,4 @@ I guess we will wrap it up here. Stay tuned for the next learnings.
 ### See you soon!
 
 
-Thanks for joining our journey to learn Go (Golang)! In our next blog, we'll dive deeper into Go programming essentials. Stay tuned for more exciting learning adventures! Don't forget to subscribe to our newsletter for updates.
+Thanks for joining our journey to learn Go (Golang)! In our next blog, we'll dive deeper into Go programming essentials. Stay tuned for more exciting learning adventures!
