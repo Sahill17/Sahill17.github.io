@@ -1,0 +1,72 @@
+baseURL: https://sahill17.github.io/
+languageCode: en-us
+title: Sahil Rathod
+theme: ["PaperMod"]
+
+pagination:
+  disableAliases: false
+  pagerSize: 4
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+menu:
+  main:
+    - identifier: home
+      name: Home
+      url: /
+      weight: 10
+    - identifier: search
+      name: Search
+      url: search/
+      weight: 20
+    - identifier: categories
+      name: Categories
+      url: /categories/
+      weight: 30
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 40
+
+assets:
+  favicon: "images/favicon.png"
+  favicon16x16: "images/favicon.png"
+  favicon32x32: "images/favicon.png"
+  apple_touch_icon: "images/favicon.png"
+  safari_pinned_tab: "images/favicon.png"
+
+params:
+  env: production
+  defaultTheme: auto
+  ShowShareButtons: false
+  ShowReadingTime: true
+  ShowCodeCopyButtons: true
+  homeInfoParams:
+    Title: Hello 👋, I'm Sahil.
+    Content: Trust me, I'm an Engineer!
+
+  socialIcons:
+    - name: "GitHub"
+      url: "https://github.com/Sahill17"
+    - name: "LinkedIn"
+      url: "https://www.linkedin.com/in/sahilrathod017"
+    - name: "StackOverFlow"
+      url: "https://stackoverflow.com/users/19755955/iamsahil"
+
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    limit: 3
+    keys: ["title", "permalink", "summary", "content"]
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
