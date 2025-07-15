@@ -1,105 +1,68 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Sahil Rathod</title><link>https://Sahill17.github.io/</link><description>Recent content on Sahil Rathod</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 23 May 2025 22:10:58 +0530</lastBuildDate><atom:link href="https://Sahill17.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Maps in Golang</title><link>https://Sahill17.github.io/maps-in-golang/</link><pubDate>Fri, 23 May 2025 22:10:58 +0530</pubDate><guid>https://Sahill17.github.io/maps-in-golang/</guid><description>&lt;p>Yes! Maps in Golang are similar to objects we have in JavaScript, dictionaries we have in Python, and hashes we have in Ruby.&lt;/p>
-&lt;p>To create a map, let&amp;rsquo;s use the built-in &lt;code>make&lt;/code>.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">package&lt;/span> &lt;span class="nx">main&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="s">&amp;#34;fmt&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">main&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="nx">Ages&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nb">make&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="kd">map&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="kt">string&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="kt">int&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">Ages&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="nx">Ages&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s">&amp;#34;Key&amp;#34;&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="mi">0&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="nx">Ages&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s">&amp;#34;Sahil&amp;#34;&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="mi">22&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="nx">Ages&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s">&amp;#34;Dev&amp;#34;&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="mi">23&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">Ages&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">% go run maps.go
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">map&lt;span class="o">[]&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">map&lt;span class="o">[&lt;/span>Dev:23 Key:0 Sahil:22&lt;span class="o">]&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In Go, maps are inherently unordered — this means that when we print a map, the order of the key-value pairs is not guaranteed and may vary between runs or operations.&lt;/p></description></item><item><title>Arrays and Slices</title><link>https://Sahill17.github.io/arrays-and-slices/</link><pubDate>Sun, 23 Feb 2025 14:35:40 +0530</pubDate><guid>https://Sahill17.github.io/arrays-and-slices/</guid><description>&lt;p>In our previous learning, we have discussed switch and defer statements. Here we will be looking into &lt;code>Arrays&lt;/code> and &lt;code>Slices&lt;/code>.&lt;/p>
-&lt;p>We already know what arrays are, but let’s just quickly reexamine what their definition is.&lt;/p>
-&lt;p>&lt;strong>An array is a linear data structure where all the elements are arranged sequentially. Stored at contiguous memory locations.&lt;/strong>&lt;/p>
-&lt;h3 id="is-the-array-always-of-a-fixed-size">&lt;strong>Is the array always of a fixed size?&lt;/strong>&lt;/h3>
-&lt;p>At core, arrays are fixed size only, but most of the languages provide dynamic-sized arrays using underlined fixed arrays. For example, Java has ArrayList, and Python has lists.&lt;/p></description></item><item><title>Switch and Defer Statements</title><link>https://Sahill17.github.io/switch-and-defer-statements/</link><pubDate>Sun, 22 Dec 2024 15:51:41 +0530</pubDate><guid>https://Sahill17.github.io/switch-and-defer-statements/</guid><description>&lt;p>In our previous learning, we have discussed functions and loops. Here we will be talking about &lt;code>switch&lt;/code> and &lt;code>defer&lt;/code> statements. Let&amp;rsquo;s start with switch cases..&lt;/p>
-&lt;p>Switch statements are a way to compare multiple options and values together. They are similar to if-else statements but are more concise and readable&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">package&lt;/span> &lt;span class="nx">main&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="s">&amp;#34;fmt&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">main&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">var&lt;/span> &lt;span class="nx">color&lt;/span> &lt;span class="kt">string&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;What color is the sky??&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">switch&lt;/span> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Scan&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">&amp;amp;&lt;/span>&lt;span class="nx">color&lt;/span>&lt;span class="p">);&lt;/span> &lt;span class="nx">color&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">case&lt;/span> &lt;span class="s">&amp;#34;red&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;Evening&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">case&lt;/span> &lt;span class="s">&amp;#34;blue&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;Day&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">case&lt;/span> &lt;span class="s">&amp;#34;pink&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;Evening&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">case&lt;/span> &lt;span class="s">&amp;#34;black&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;Night&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">default&lt;/span>&lt;span class="p">:&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;Sky is what???&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Did you notice that the Go &lt;code>break&lt;/code> statement is not required at the end of a &lt;code>case&lt;/code>. &lt;code>break&lt;/code> statement is implicit in Go.&lt;/p></description></item><item><title>Functions and Loops in Golang</title><link>https://Sahill17.github.io/functions-and-loops-in-golang/</link><pubDate>Sun, 22 Dec 2024 02:20:05 +0530</pubDate><guid>https://Sahill17.github.io/functions-and-loops-in-golang/</guid><description>&lt;p>We have already seen &lt;code>functions&lt;/code> and used them, but let&amp;rsquo;s just get a refresher of them quickly.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">package&lt;/span> &lt;span class="nx">main&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="s">&amp;#34;fmt&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">add&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">x&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">y&lt;/span> &lt;span class="kt">int&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="kt">int&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="kt">int&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nx">x&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="nx">y&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">x&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="nx">y&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">main&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nf">add&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">))&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
-&lt;li>
-&lt;p>a function can take one or more arguments. Here, &lt;code>add()&lt;/code> takes two parameters of type int.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Also, as you can see, both parameters share the same type. Hence, we have omitted the first parameter &lt;code>a&lt;/code>&amp;rsquo;s type and kept the last one.&lt;/p></description></item><item><title>Variables in Golang</title><link>https://Sahill17.github.io/variables-in-golang/</link><pubDate>Tue, 03 Dec 2024 17:38:01 +0530</pubDate><guid>https://Sahill17.github.io/variables-in-golang/</guid><description>&lt;p>As we have already said hello to the world, now we can start with our basic learning. In this blog, we will understand variables and many other things related to variables in Golang.&lt;/p>
-&lt;p>I know we are all programmers and we already know what variables are, but still, we are learning from zero. Let&amp;rsquo;s just discuss some things about variables in Golang.&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;p>bool&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>string&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>int int8 int16 int32 int64&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>uint uint8 uint16 uint32 uint64&lt;/p></description></item><item><title>Saying Hello to the World With Golang</title><link>https://Sahill17.github.io/saying-hello-to-the-world-with-golang/</link><pubDate>Thu, 14 Nov 2024 19:51:57 +0530</pubDate><guid>https://Sahill17.github.io/saying-hello-to-the-world-with-golang/</guid><description>&lt;p>In this blog, we will&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;p>Install Go (if you haven&amp;rsquo;t already)&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Say Hello to the World&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Use Go commands to run our code&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Learn about packages and imports in Go&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Learn about exported names&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;h2 id="install-go">Install Go&lt;/h2>
-&lt;p>Use the &lt;a href="https://go.dev/doc/install" target="_blank" >Download and Install&lt;/a> steps.&lt;/p>
-&lt;p>Verify that you&amp;rsquo;ve installed Go by opening a command prompt and typing the following command:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">go version
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Confirm that the command prints the installed version of Go. For me, it&amp;rsquo;s &lt;code>go1.22.1&lt;/code>&lt;/p></description></item><item><title>Why Learn Go(Golang)?</title><link>https://Sahill17.github.io/why-learn-go/</link><pubDate>Thu, 14 Nov 2024 18:21:16 +0530</pubDate><guid>https://Sahill17.github.io/why-learn-go/</guid><description>&lt;h2 id="what-is-golang">What is Golang?&lt;/h2>
-&lt;p>Go, commonly referred to as Golang, is a statically typed, compiled programming language designed by Google engineers Robert Griesemer, Rob Pike, and Ken Thompson. It was first released in 2009, and since then, it has gained immense popularity among developers for its simplicity, efficiency, and concurrency support.&lt;/p>
-&lt;h2 id="reasons-to-learn-golang">Reasons to learn Golang?&lt;/h2>
-&lt;ol>
-&lt;li>Faster&lt;/li>
-&lt;/ol>
-&lt;p>Compiled languages are much faster than interpreted languages, and Go is no exception. Go is generally faster and more lightweight than interpreted or VM powered languages like&lt;/p></description></item><item><title>CheatSheet</title><link>https://Sahill17.github.io/cheatsheet/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://Sahill17.github.io/cheatsheet/</guid><description/></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sahil Rathod</title>
+    <link>https://sahill17.github.io/</link>
+    <description>Recent content on Sahil Rathod</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 23 May 2025 22:10:58 +0530</lastBuildDate>
+    <atom:link href="https://sahill17.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Maps in Golang</title>
+      <link>https://sahill17.github.io/post/maps-in-golang/</link>
+      <pubDate>Fri, 23 May 2025 22:10:58 +0530</pubDate>
+      <guid>https://sahill17.github.io/post/maps-in-golang/</guid>
+      <description>In programming, a &amp;ldquo;map&amp;rdquo; typically refers to a data structure that stores key-value pairs, allowing for efficient retrieval of values based on their associated keys.</description>
+    </item>
+    <item>
+      <title>Arrays and Slices</title>
+      <link>https://sahill17.github.io/post/arrays-and-slices/</link>
+      <pubDate>Sun, 23 Feb 2025 14:35:40 +0530</pubDate>
+      <guid>https://sahill17.github.io/post/arrays-and-slices/</guid>
+      <description>In programming, an array is a data structure that stores a collection of elements of the same data type, typically in contiguous memory locations.</description>
+    </item>
+    <item>
+      <title>Switch and Defer Statements</title>
+      <link>https://sahill17.github.io/post/switch-and-defer-statements/</link>
+      <pubDate>Sun, 22 Dec 2024 15:51:41 +0530</pubDate>
+      <guid>https://sahill17.github.io/post/switch-and-defer-statements/</guid>
+      <description>In programming, switch and defer statements are control flow mechanisms with distinct purposes.</description>
+    </item>
+    <item>
+      <title>Functions and Loops in Golang</title>
+      <link>https://sahill17.github.io/post/functions-and-loops-in-golang/</link>
+      <pubDate>Sun, 22 Dec 2024 02:20:05 +0530</pubDate>
+      <guid>https://sahill17.github.io/post/functions-and-loops-in-golang/</guid>
+      <description>In programming, functions and loops are fundamental concepts used to structure and control the flow of execution.</description>
+    </item>
+    <item>
+      <title>Variables in Golang</title>
+      <link>https://sahill17.github.io/post/variables-in-golang/</link>
+      <pubDate>Tue, 03 Dec 2024 17:38:01 +0530</pubDate>
+      <guid>https://sahill17.github.io/post/variables-in-golang/</guid>
+      <description>In programming, a variable is a named storage location in a computer&amp;rsquo;s memory that holds a value.</description>
+    </item>
+    <item>
+      <title>Saying Hello to the World With Golang</title>
+      <link>https://sahill17.github.io/post/saying-hello-to-the-world-with-golang/</link>
+      <pubDate>Thu, 14 Nov 2024 19:51:57 +0530</pubDate>
+      <guid>https://sahill17.github.io/post/saying-hello-to-the-world-with-golang/</guid>
+      <description>fmt.Println(&amp;ldquo;Hello, World!&amp;rdquo;)</description>
+    </item>
+    <item>
+      <title>Why Learn Go(Golang)?</title>
+      <link>https://sahill17.github.io/post/why-learn-go/</link>
+      <pubDate>Thu, 14 Nov 2024 18:21:16 +0530</pubDate>
+      <guid>https://sahill17.github.io/post/why-learn-go/</guid>
+      <description>Go, also known as Golang, is an open-source programming language developed by Google.</description>
+    </item>
+    <item>
+      <title>Search</title>
+      <link>https://sahill17.github.io/search/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sahill17.github.io/search/</guid>
+      <description>search</description>
+    </item>
+  </channel>
+</rss>
