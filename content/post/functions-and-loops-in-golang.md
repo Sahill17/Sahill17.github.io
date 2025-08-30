@@ -161,3 +161,5 @@ Let's wrap it up here, In the next blog, we will be looking at switch cases and 
 ### See you soon!
 
 Thanks for joining our journey to learn Go (Golang)!
+
+Find all the posts from this series [here](https://sahill17.github.io/tags/go-series/).

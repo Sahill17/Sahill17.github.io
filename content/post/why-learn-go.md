@@ -64,4 +64,4 @@ In 2024, Go (Golang) developers will continue to be highly sought after, with co
 
 There are many resources available online to help you get started. The official Golang website provides a comprehensive tutorial for beginners, as well as documentation for more advanced topics.
 
-But if you want to learn Golang with me, then you can join me on this journey. I'll be learning Golang with you.
+Find all the posts from this series [here](https://sahill17.github.io/tags/go-series/).
