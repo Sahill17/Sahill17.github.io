@@ -1,6 +1,6 @@
 +++
 date = '2024-12-22T15:51:41+05:30'
-draft = false
+draft = true
 title = 'Switch and Defer Statements'
 summary = "In programming, switch and defer statements are control flow mechanisms with distinct purposes."
 tags = ["go-series","golang"]

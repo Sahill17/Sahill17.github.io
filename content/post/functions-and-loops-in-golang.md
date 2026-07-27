@@ -1,6 +1,6 @@
 +++
 date = '2024-12-22T02:20:05+05:30'
-draft = false
+draft = true
 title = 'Functions and Loops in Golang'
 summary = "In programming, functions and loops are fundamental concepts used to structure and control the flow of execution."
 tags = ["go-series","golang"]

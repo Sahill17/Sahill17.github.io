@@ -1,6 +1,6 @@
 +++
 date = '2024-12-03T17:38:01+05:30'
-draft = false
+draft = true
 summary = "In programming, a variable is a named storage location in a computer's memory that holds a value. "
 title = 'Variables in Golang'
 tags = ["go-series","golang"]
