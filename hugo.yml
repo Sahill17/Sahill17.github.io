@@ -46,6 +46,7 @@ assets:
 params:
   author:
     name: Sahil Rathod
+  hideAuthor: true
 
   env: production
   defaultTheme: auto
