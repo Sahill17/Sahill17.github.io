@@ -1,6 +1,6 @@
 +++
 date = '2025-02-23T14:35:40+05:30'
-draft = false
+draft = true
 title = 'Arrays and Slices'
 summary = "In programming, an array is a data structure that stores a collection of elements of the same data type, typically in contiguous memory locations."
 tags = ["go-series","golang"]
