@@ -1,7 +1,13 @@
 baseURL: https://sahill17.github.io/
-languageCode: en-us
 title: Sahil Rathod
 theme: ["PaperMod"]
+
+defaultContentLanguage: en
+
+languages:
+  en:
+    languageName: English
+    locale: en-US
 
 pagination:
   disableAliases: false
@@ -19,7 +25,7 @@ menu:
       weight: 10
     - identifier: search
       name: Search
-      url: search/
+      url: /search/
       weight: 20
     - identifier: categories
       name: Categories
@@ -38,22 +44,26 @@ assets:
   safari_pinned_tab: "images/favicon.png"
 
 params:
+  author:
+    name: Sahil Rathod
+
   env: production
   defaultTheme: auto
   ShowShareButtons: false
   ShowReadingTime: true
   ShowCodeCopyButtons: true
+
   homeInfoParams:
-    Title: Hello 👋, I'm Sahil.
-    Content: Trust me, I'm an Engineer!
+    Title: "Hello 👋, I'm Sahil."
+    Content: "Trust me, I'm an Engineer!"
 
   socialIcons:
-    - name: "GitHub"
-      url: "https://github.com/Sahill17"
-    - name: "LinkedIn"
-      url: "https://www.linkedin.com/in/sahilrathod017"
-    - name: "StackOverFlow"
-      url: "https://stackoverflow.com/users/19755955/iamsahil"
+    - name: GitHub
+      url: https://github.com/Sahill17
+    - name: LinkedIn
+      url: https://www.linkedin.com/in/sahilrathod017
+    - name: StackOverFlow
+      url: https://stackoverflow.com/users/19755955/iamsahil
 
   fuseOpts:
     isCaseSensitive: false
@@ -63,7 +73,11 @@ params:
     threshold: 0.4
     minMatchCharLength: 0
     limit: 3
-    keys: ["title", "permalink", "summary", "content"]
+    keys:
+      - title
+      - permalink
+      - summary
+      - content
 
 outputs:
   home:
